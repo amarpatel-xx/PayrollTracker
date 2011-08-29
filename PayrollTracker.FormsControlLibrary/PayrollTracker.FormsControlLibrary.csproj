@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6F4582B3-84E8-49CC-BCDB-FA7C89B9299C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PayrollTracker.FormsControlLibrary</RootNamespace>
+    <AssemblyName>PayrollTracker.FormsControlLibrary</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PayrollTracker.ModelClassLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PayrollTracker.ModelClassLibrary\obj\Debug\PayrollTracker.ModelClassLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountInformationUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AccountInformationUserControl.Designer.cs">
+      <DependentUpon>AccountInformationUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnalogClockControl\AnalogClock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BoardingUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BoardingUserControl.Designer.cs">
+      <DependentUpon>BoardingUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridViewControls\CalendarCell.cs" />
+    <Compile Include="DataGridViewControls\CalendarColumn.cs" />
+    <Compile Include="DataGridViewControls\CalendarEditingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataGridViewControls\RadioButtonCell.cs" />
+    <Compile Include="DataGridViewControls\RadioButtonCellLayout.cs" />
+    <Compile Include="DataGridViewControls\RadioButtonColumn.cs" />
+    <Compile Include="DigitalClock\Controls\A1Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DigitalClock\Controls\A1Panel.designer.cs">
+      <DependentUpon>A1Panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DigitalClock\Controls\A1PanelGraphics.cs" />
+    <Compile Include="DigitalClock\Controls\DigitalDisplayControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DigitalClock\Controls\DigitalDisplayControl.designer.cs">
+      <DependentUpon>DigitalDisplayControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DigitalClock\Controls\Globals.cs" />
+    <Compile Include="DogUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DogUserControl.Designer.cs">
+      <DependentUpon>DogUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeInformationUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EmployeeInformationUserControl.Designer.cs">
+      <DependentUpon>EmployeeInformationUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroomingUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GroomingUserControl.Designer.cs">
+      <DependentUpon>GroomingUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoginUserControl.Designer.cs">
+      <DependentUpon>LoginUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PayrollInformationUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PayrollInformationUserControl.Designer.cs">
+      <DependentUpon>PayrollInformationUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PickupDropoffUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PickupDropoffUserControl.Designer.cs">
+      <DependentUpon>PickupDropoffUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RolesUserControl.Designer.cs">
+      <DependentUpon>RolesUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeCardUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TimeCardUserControl.Designer.cs">
+      <DependentUpon>TimeCardUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrainingUserControl.Designer.cs">
+      <DependentUpon>TrainingUserControl.cs</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AccountInformationUserControl.resx">
+      <DependentUpon>AccountInformationUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnalogClockControl\AnalogClock.resx">
+      <DependentUpon>AnalogClock.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayrollInformationUserControl.resx">
+      <DependentUpon>PayrollInformationUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RolesUserControl.resx">
+      <DependentUpon>RolesUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AnalogClockControl\AnalogClock.bmp" />
+    <EmbeddedResource Include="BoardingUserControl.resx">
+      <DependentUpon>BoardingUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DigitalClock\Controls\DigitalDisplayControl.resx">
+      <DependentUpon>DigitalDisplayControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DogUserControl.resx">
+      <DependentUpon>DogUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeInformationUserControl.resx">
+      <DependentUpon>EmployeeInformationUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroomingUserControl.resx">
+      <DependentUpon>GroomingUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginUserControl.resx">
+      <DependentUpon>LoginUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PickupDropoffUserControl.resx">
+      <DependentUpon>PickupDropoffUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeCardUserControl.resx">
+      <DependentUpon>TimeCardUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainingUserControl.resx">
+      <DependentUpon>TrainingUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

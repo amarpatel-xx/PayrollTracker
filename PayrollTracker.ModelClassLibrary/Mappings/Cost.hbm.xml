@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"                    
+                   assembly="PayrollTracker.ModelClassLibrary"                    
+                   namespace="PayrollTracker.ModelClassLibrary.Domain">
+
+  <class name="Cost">
+    <id name="CostId" column="cost_id">
+      <generator class="uuid.hex" />
+    </id>
+    <property name="CostValue" column="cost"/>
+  </class>
+  
+</hibernate-mapping>

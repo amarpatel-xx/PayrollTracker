@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"                    
+                   assembly="PayrollTracker.ModelClassLibrary"                    
+                   namespace="PayrollTracker.ModelClassLibrary.Domain">
+
+  <class name="CostType" table="cost_type">
+    <id name="CostTypeId" column="cost_type_id">
+      <generator class="uuid.hex" />
+    </id>
+    <property name="CostName" column="cost_name"/>
+    <bag name="PossibleCosts" table="cost_has_cost_type" lazy="false">
+      <key column="cost_type_id"></key>
+      <many-to-many class="Cost" column="cost_id"></many-to-many>
+    </bag>
+  </class>
+  <query name="CostTypes.Like.Name">
+    <![CDATA[
+      select costType
+      from CostType costType 
+      where costType.CostName like ?
+      order by costType.CostName asc
+      ]]>
+  </query>
+</hibernate-mapping>

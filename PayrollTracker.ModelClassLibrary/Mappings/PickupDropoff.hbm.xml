@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"                    
+                   assembly="PayrollTracker.ModelClassLibrary"                    
+                   namespace="PayrollTracker.ModelClassLibrary.Domain">
+
+  <class name="PickupDropoff" table="pickup_dropoff">
+    <id name="PickupDropoffId" column="pickup_dropoff_id">
+      <generator class="uuid.hex" />
+    </id>
+    <property name="Date"/>
+    <many-to-one name="Dog" column="dog_id" lazy="false"/>
+    <many-to-one name="PickupCost" class="Cost" column="pickup_cost_id" lazy="false"/>
+    <many-to-one name="DropoffCost" class="Cost" column="dropoff_cost_id" lazy="false"/>
+    <many-to-one name="User" column="user_id" lazy="false"/>
+  </class>
+  <query name="PickupDropoff.by.user.and.within.payroll.period">
+    <![CDATA[
+      select pickupDropoff
+      from PickupDropoff pickupDropoff
+      where User.UserId = ? and pickupDropoff.Date >= ? and pickupDropoff.Date <= ?
+      ]]>
+  </query>
+</hibernate-mapping>

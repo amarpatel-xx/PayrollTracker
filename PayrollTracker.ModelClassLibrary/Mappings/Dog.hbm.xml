@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"                    
+                   assembly="PayrollTracker.ModelClassLibrary"                    
+                   namespace="PayrollTracker.ModelClassLibrary.Domain">
+
+  <class name="Dog">
+    <id name="DogId" column="dog_id">
+      <generator class="uuid.hex" />
+    </id>
+    <property name="FirstName" column="first_name"/>
+    <property name="LastName" column="last_name"/>
+  </class>
+  <query name="Dogs.within.system">
+    <![CDATA[
+      select dog
+      from Dog dog
+      order by dog.LastName asc, dog.FirstName asc
+      ]]>
+  </query>
+</hibernate-mapping>

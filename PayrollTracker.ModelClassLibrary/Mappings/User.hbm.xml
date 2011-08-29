@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"                    
+                   assembly="PayrollTracker.ModelClassLibrary"                    
+                   namespace="PayrollTracker.ModelClassLibrary.Domain">
+
+  <class name="User">
+    <id name="UserId" column="user_id">
+      <generator class="uuid.hex" />
+    </id>
+    <property name="Username"/>
+    <property name="Password"/>
+    <property name="IsActive" column="is_active"/>
+    <property name="FirstName" column="first_name"/>
+    <property name="MiddleInitial" column="middle_initial"/>
+    <property name="LastName" column="last_name"/>
+    <property name="SocialSecurityNumber" column="ssn"/>
+    <property name="PhoneNumber" column="phone_number"/>
+    <property name="DateOfHire" column="date_of_hire"/>
+    <property name="EmergencyContactName" column="emergency_contact_name"/>
+    <property name="EmergencyContactNumber" column="emergency_contact_number"/>
+    <property name="HourlyPay" column="hourly_pay"/>
+    <property name="TrainingPercentage" column="training_percentage"/>
+    <property name="GroomingPercentage" column="grooming_percentage"/>
+    <bag name="AssignedRoles" table="user_has_role" lazy="false">
+      <key column="user_id"></key>
+      <many-to-many class="Role" column="role_id"></many-to-many>
+    </bag>
+    <bag name="TimeEntries" cascade="all" lazy="false" inverse="true">
+      <key column="user_id"/>
+      <one-to-many
+         class="TimeCard"/>
+    </bag>
+    <set name="WorksForCompanies" table="user_has_company" lazy="false">
+      <key column="user_id"></key>
+      <many-to-many class="Company" column="company_id"></many-to-many>
+    </set>
+    <bag name="Groomings" cascade="all" lazy="false" inverse="true">
+      <key column="user_id"/>
+      <one-to-many
+         class="Grooming"/>
+    </bag>
+    <bag name="Boardings" cascade="all" lazy="false" inverse="true">
+      <key column="user_id"/>
+      <one-to-many
+         class="Boarding"/>
+    </bag>
+    <bag name="Daycares" cascade="all" lazy="false" inverse="true">
+      <key column="user_id"/>
+      <one-to-many
+         class="Daycare"/>
+    </bag>
+    <bag name="PickupDropoffs" cascade="all" lazy="false" inverse="true">
+      <key column="user_id"/>
+      <one-to-many
+         class="PickupDropoff"/>
+    </bag>
+    <bag name="Trainings" cascade="all" lazy="false" inverse="true">
+      <key column="user_id"/>
+      <one-to-many
+         class="Training"/>
+    </bag>
+  </class>
+  <query name="Users.within.system">
+    <![CDATA[
+      select user
+      from User user
+      order by user.Username asc
+      ]]>
+  </query>
+</hibernate-mapping>

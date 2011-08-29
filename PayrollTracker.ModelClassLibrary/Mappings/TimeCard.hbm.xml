@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"                    
+                   assembly="PayrollTracker.ModelClassLibrary"                    
+                   namespace="PayrollTracker.ModelClassLibrary.Domain">
+
+  <class name="TimeCard" table="time_card">
+    <id name="TimeCardId" column="time_card_id">
+      <generator class="uuid.hex" />
+    </id>
+    <property name="TimeIn" column="time_in"/>
+    <property name="TimeOut" column="time_out"/>
+    <many-to-one name="User" column="user_id" lazy="false"/>
+  </class>
+  <query name="TimeCard.latest.by.user.and.within.payroll.period">
+    <![CDATA[
+      select timeCard
+      from TimeCard timeCard
+      where User.UserId = ? and timeCard.TimeIn >= ? and timeCard.TimeIn <= ? and timeCard.TimeIn = (select max(timeCard2.TimeIn) from TimeCard timeCard2)
+      ]]>
+  </query>
+  <query name="TimeCards.by.user.and.within.payroll.period">
+    <![CDATA[
+      select timeCard
+      from TimeCard timeCard
+      where User.UserId = ? and timeCard.TimeIn >= ? and timeCard.TimeIn <= ?
+      order by timeCard.TimeIn desc
+      ]]>
+  </query>
+</hibernate-mapping>

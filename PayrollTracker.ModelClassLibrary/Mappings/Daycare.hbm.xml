@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"                    
+                   assembly="PayrollTracker.ModelClassLibrary"                    
+                   namespace="PayrollTracker.ModelClassLibrary.Domain">
+
+  <class name="Daycare">
+    <id name="DaycareId" column="daycare_id">
+      <generator class="uuid.hex" />
+    </id>
+    <property name="Date"/>
+    <many-to-one name="Dog" column="dog_id" lazy="false"/>
+    <many-to-one name="DaycareCost" class="Cost" column="daycare_cost_id" lazy="false"/>
+    <many-to-one name="User" column="user_id" lazy="false"/>
+  </class>
+  <query name="Daycare.by.user.and.within.payroll.period">
+    <![CDATA[
+      select daycare
+      from Daycare daycare
+      where User.UserId = ? and daycare.Date >= ? and daycare.Date <= ?
+      ]]>
+  </query>
+</hibernate-mapping>

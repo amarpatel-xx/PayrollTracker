@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- This is the ByteFX.Data.dll provider for MySql -->
+<hibernate-configuration  xmlns="urn:nhibernate-configuration-2.2" >
+  <session-factory name="PayrollTracker">
+    <property name="connection.driver_class">NHibernate.Driver.MySqlDataDriver</property>
+    <property name="connection.connection_string">
+      Database=doglando;Data Source=localhost;User Id=root;Password=doglando
+    </property>
+    <property name="dialect">NHibernate.Dialect.MySQLDialect</property>
+    <property name="proxyfactory.factory_class">NHibernate.ByteCode.LinFu.ProxyFactoryFactory, NHibernate.ByteCode.LinFu</property>
+    <property name="show_sql">true</property>
+    <!-- mapping files -->
+    <mapping resource="PayrollTracker.ModelClassLibrary.Mappings.Dog.hbm.xml" assembly="PayrollTracker.ModelClassLibrary" />
+    <mapping resource="PayrollTracker.ModelClassLibrary.Mappings.User.hbm.xml" assembly="PayrollTracker.ModelClassLibrary" />
+    <mapping resource="PayrollTracker.ModelClassLibrary.Mappings.Role.hbm.xml" assembly="PayrollTracker.ModelClassLibrary" />
+    <mapping resource="PayrollTracker.ModelClassLibrary.Mappings.TimeCard.hbm.xml" assembly="PayrollTracker.ModelClassLibrary" />
+    <mapping resource="PayrollTracker.ModelClassLibrary.Mappings.Company.hbm.xml" assembly="PayrollTracker.ModelClassLibrary" />
+    <mapping resource="PayrollTracker.ModelClassLibrary.Mappings.Payroll.hbm.xml" assembly="PayrollTracker.ModelClassLibrary" />
+    <mapping resource="PayrollTracker.ModelClassLibrary.Mappings.GroomingType.hbm.xml" assembly="PayrollTracker.ModelClassLibrary" />
+    <mapping resource="PayrollTracker.ModelClassLibrary.Mappings.CostType.hbm.xml" assembly="PayrollTracker.ModelClassLibrary" />
+    <mapping resource="PayrollTracker.ModelClassLibrary.Mappings.Cost.hbm.xml" assembly="PayrollTracker.ModelClassLibrary" />
+    <mapping resource="PayrollTracker.ModelClassLibrary.Mappings.Grooming.hbm.xml" assembly="PayrollTracker.ModelClassLibrary" />
+    <mapping resource="PayrollTracker.ModelClassLibrary.Mappings.Boarding.hbm.xml" assembly="PayrollTracker.ModelClassLibrary" />
+    <mapping resource="PayrollTracker.ModelClassLibrary.Mappings.Daycare.hbm.xml" assembly="PayrollTracker.ModelClassLibrary" />
+    <mapping resource="PayrollTracker.ModelClassLibrary.Mappings.PickupDropoff.hbm.xml" assembly="PayrollTracker.ModelClassLibrary" />
+    <mapping resource="PayrollTracker.ModelClassLibrary.Mappings.Training.hbm.xml" assembly="PayrollTracker.ModelClassLibrary" />
+  </session-factory>
+</hibernate-configuration>

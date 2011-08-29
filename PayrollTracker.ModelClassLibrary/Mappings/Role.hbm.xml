@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"                    
+                   assembly="PayrollTracker.ModelClassLibrary"                    
+                   namespace="PayrollTracker.ModelClassLibrary.Domain">
+
+  <class name="Role">
+    <id name="RoleId" column="role_id">
+      <generator class="uuid.hex" />
+    </id>
+    <property name="RoleName" column="role_name"/>
+  </class>
+  <query name="Roles.within.system">
+    <![CDATA[
+      select role
+      from Role role
+      order by role.RoleName asc
+      ]]>
+  </query>
+</hibernate-mapping>
